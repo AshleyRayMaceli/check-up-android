@@ -9,4 +9,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.epicodus.checkup.AppointmentsActivity">
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:id="@+id/listView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add An Appointment"
+        android:id="@+id/newAppointmentButton"
+        android:textSize="20dp"
+        android:background="@color/colorAccent"
+        android:layout_marginBottom="47dp"
+        android:layout_above="@+id/findDoctorButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find A Doctor"
+        android:id="@+id/findDoctorButton"
+        android:textSize="20dp"
+        android:background="@color/colorSecondaryAccent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
 </RelativeLayout>
