@@ -39,6 +39,9 @@
             </meta-data>
         </activity>
 
+        <activity android:name=".LogInActivity"
+                  android:theme="@style/NoActionBarTheme">
+        </activity>
     </application>
 
 </manifest>

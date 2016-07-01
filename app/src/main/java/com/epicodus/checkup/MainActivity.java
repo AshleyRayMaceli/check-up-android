@@ -11,6 +11,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.appointmentsButton) Button mAppointmentsButton;
+    @Bind(R.id.loginButton) Button mLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +19,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mAppointmentsButton.setOnClickListener(this);
+        mLoginButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if(v == mAppointmentsButton) {
             Intent intent = new Intent(MainActivity.this, AppointmentsActivity.class);
+            startActivity(intent);
+        } else if(v == mLoginButton) {
+            Intent intent = new Intent(MainActivity.this, LogInActivity.class);
             startActivity(intent);
         }
     }

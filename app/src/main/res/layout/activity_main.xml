@@ -43,4 +43,16 @@
         android:textSize="20dp"
         android:background="@color/colorAccent" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login Placeholder"
+        android:id="@+id/loginButton"
+        android:textSize="20dp"
+        android:background="@color/colorSecondaryAccent"
+        android:layout_below="@+id/mainTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="127dp" />
+
 </RelativeLayout>
