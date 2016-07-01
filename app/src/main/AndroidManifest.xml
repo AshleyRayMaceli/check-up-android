@@ -17,30 +17,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".AppointmentsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.checkup.MainActivity">
-            </meta-data>
+                android:value="com.epicodus.checkup.MainActivity"></meta-data>
         </activity>
-
         <activity android:name=".AppointmentFormActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.checkup.MainActivity">
-            </meta-data>
+                android:value="com.epicodus.checkup.MainActivity"></meta-data>
         </activity>
-
         <activity android:name=".FindDoctorActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.checkup.MainActivity">
-            </meta-data>
+                android:value="com.epicodus.checkup.MainActivity"></meta-data>
         </activity>
+        <activity
+            android:name=".LogInActivity"
+            android:theme="@style/NoActionBarTheme"></activity>
 
-        <activity android:name=".LogInActivity"
-                  android:theme="@style/NoActionBarTheme">
+        <activity android:name=".HealthActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.checkup.MainActivity"></meta-data>
         </activity>
     </application>
 
