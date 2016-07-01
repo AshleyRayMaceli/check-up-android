@@ -14,6 +14,7 @@ import butterknife.ButterKnife;
 public class AppointmentsActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.appointmentsListView) ListView mAppointmentsListView;
     @Bind(R.id.newAppointmentButton) Button mNewAppointmentButton;
+    @Bind(R.id.findDoctorButton) Button mFindDoctorButton;
 
     private String[] appointments = new String[] {"Doctor A - Jan 1st 2017", "Doctor B - Feb 5th 2017", "Doctor C - Feb 19th 2017", "Doctor D - March 1st 2017"};
 
@@ -25,11 +26,17 @@ public class AppointmentsActivity extends AppCompatActivity implements View.OnCl
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, appointments);
         mAppointmentsListView.setAdapter(adapter);
         mNewAppointmentButton.setOnClickListener(this);
+        mFindDoctorButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(AppointmentsActivity.this, AppointmentFormActivity.class);
-        startActivity(intent);
+        if(v == mNewAppointmentButton) {
+            Intent intent = new Intent(AppointmentsActivity.this, AppointmentFormActivity.class);
+            startActivity(intent);
+        } else if (v == mFindDoctorButton) {
+            Intent intent = new Intent(AppointmentsActivity.this, FindDoctorActivity.class);
+            startActivity(intent);
+        }
     }
 }
