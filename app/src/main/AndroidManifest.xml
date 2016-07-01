@@ -17,7 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppointmentsActivity"></activity>
+        <activity android:name=".AppointmentsActivity" />
+        <activity android:name=".AppointmentFormActivity"></activity>
     </application>
 
 </manifest>
