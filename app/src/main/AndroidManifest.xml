@@ -20,26 +20,30 @@
         <activity android:name=".AppointmentsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.checkup.MainActivity"></meta-data>
+                android:value="com.epicodus.checkup.MainActivity" />
         </activity>
         <activity android:name=".AppointmentFormActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.checkup.MainActivity"></meta-data>
+                android:value="com.epicodus.checkup.MainActivity" />
         </activity>
         <activity android:name=".FindDoctorActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.checkup.MainActivity"></meta-data>
+                android:value="com.epicodus.checkup.MainActivity" />
         </activity>
         <activity
             android:name=".LogInActivity"
-            android:theme="@style/NoActionBarTheme"></activity>
-
+            android:theme="@style/NoActionBarTheme" />
         <activity android:name=".HealthActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.checkup.MainActivity"></meta-data>
+                android:value="com.epicodus.checkup.MainActivity" />
+        </activity>
+        <activity android:name=".AboutActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.checkup.MainActivity" />
         </activity>
     </application>
 

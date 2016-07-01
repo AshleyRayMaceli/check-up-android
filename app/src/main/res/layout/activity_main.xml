@@ -26,11 +26,12 @@
         android:layout_height="wrap_content"
         android:text="Track Health"
         android:id="@+id/healthButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="106dp"
+        android:layout_marginBottom="43dp"
         android:textSize="20dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        android:layout_above="@+id/appointmentsButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="match_parent"
@@ -50,9 +51,21 @@
         android:id="@+id/loginButton"
         android:textSize="20dp"
         android:background="@color/colorSecondaryAccent"
-        android:layout_below="@+id/mainTitle"
+        android:layout_above="@+id/aboutButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="50dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About Check Up"
+        android:id="@+id/aboutButton"
+        android:background="@color/colorAccent"
+        android:textSize="20dp"
+        android:layout_above="@+id/healthButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="127dp" />
+        android:layout_marginBottom="52dp" />
 
 </RelativeLayout>

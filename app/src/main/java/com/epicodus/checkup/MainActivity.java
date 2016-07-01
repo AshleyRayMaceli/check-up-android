@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.appointmentsButton) Button mAppointmentsButton;
     @Bind(R.id.loginButton) Button mLoginButton;
     @Bind(R.id.healthButton) Button mHealthButton;
+    @Bind(R.id.aboutButton) Button mAboutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAppointmentsButton.setOnClickListener(this);
         mLoginButton.setOnClickListener(this);
         mHealthButton.setOnClickListener(this);
+        mAboutButton.setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if(v == mLoginButton) {
             Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+            startActivity(intent);
+        } else if(v == mAboutButton) {
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
         }
     }
