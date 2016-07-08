@@ -42,21 +42,21 @@ public class BetterDoctorService {
                 JSONArray resultsJSON = betterDoctorJSON.getJSONArray("data");
                 for (int i = 0; i < resultsJSON.length(); i++) {
                     JSONObject doctorJSON = resultsJSON.getJSONObject(i);
-                    String name = doctorJSON.getJSONObject("practices").getString("name");
-                    String specialty = doctorJSON.getJSONObject("specialties").getString("actor");
-                    String phone = doctorJSON.getJSONObject("phones").getString("number");
-                    double latitude = doctorJSON.getJSONObject("practices").getDouble("lat");
-                    double longitude = doctorJSON.getJSONObject("practices").getDouble("lon");
+                    String name = doctorJSON.getJSONArray("practices").getJSONObject(0).getString("name");
+//                    String specialty = doctorJSON.getJSONArray("specialties").getJSONObject(0).getString("actor");
+//                    String phone = doctorJSON.getJSONArray("phones").getString("number");
+//                    double latitude = doctorJSON.getJSONArray("practices").getDouble("lat");
+//                    double longitude = doctorJSON.getJSONArray("practices").getDouble("lon");
 
                     ArrayList<String> address = new ArrayList<>();
-                    JSONArray addressJSON = doctorJSON.getJSONObject("practices").getJSONArray("visit_address");
-                    for (int y = 0; y < addressJSON.length(); y++) {
-                        address.add(addressJSON.get(y).toString());
-                    }
+//                    JSONArray addressJSON = doctorJSON.getJSONObject("practices").getJSONArray("visit_address");
+//                    for (int y = 0; y < addressJSON.length(); y++) {
+//                        address.add(addressJSON.get(y).toString());
+//                    }
+//
+//                    String bio = doctorJSON.getString("bio");
 
-                    String bio = doctorJSON.getString("bio");
-
-                    Doctor doctor = new Doctor(name, specialty, phone, latitude, longitude, address, bio);
+                    Doctor doctor = new Doctor(name, "", "", 6, 6, address, "");
                     doctors.add(doctor);
                 }
             }

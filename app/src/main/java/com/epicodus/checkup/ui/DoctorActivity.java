@@ -3,24 +3,31 @@ package com.epicodus.checkup.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.epicodus.checkup.R;
+import com.epicodus.checkup.models.Doctor;
 import com.epicodus.checkup.services.BetterDoctorService;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
 public class DoctorActivity extends AppCompatActivity {
-    public static final String TAG = DoctorActivity.class.getSimpleName();
+    @Bind(R.id.listView) ListView mListView;
+    public ArrayList<Doctor> mDoctors = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor);
+        ButterKnife.bind(this);
 
         Intent intent = getIntent();
         String specialty = intent.getStringExtra("specialty");
@@ -29,6 +36,7 @@ public class DoctorActivity extends AppCompatActivity {
 
     private void getDoctors(String specialty) {
         final BetterDoctorService betterDoctorService = new BetterDoctorService();
+
         betterDoctorService.findDoctorsBySpecialty(specialty, new Callback() {
 
             @Override
@@ -37,13 +45,22 @@ public class DoctorActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
-                    Log.v(TAG, jsonData);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            public void onResponse(Call call, Response response) {
+                mDoctors = betterDoctorService.processResults(response);
+
+                DoctorActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        String[] doctorNames = new String[mDoctors.size()];
+                        for (int i = 0; i < doctorNames.length; i++) {
+                            doctorNames[i] = mDoctors.get(i).getName();
+                        }
+
+                        ArrayAdapter adapter = new ArrayAdapter(DoctorActivity.this, android.R.layout.simple_list_item_1, doctorNames);
+                        mListView.setAdapter(adapter);
+                    }
+                });
             }
         });
     }
