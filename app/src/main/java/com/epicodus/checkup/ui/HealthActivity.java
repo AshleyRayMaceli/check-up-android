@@ -1,4 +1,4 @@
-package com.epicodus.checkup;
+package com.epicodus.checkup.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import com.epicodus.checkup.R;
 
 import java.util.ArrayList;
 

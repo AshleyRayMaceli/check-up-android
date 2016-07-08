@@ -1,4 +1,4 @@
-package com.epicodus.checkup;
+package com.epicodus.checkup.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.epicodus.checkup.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
