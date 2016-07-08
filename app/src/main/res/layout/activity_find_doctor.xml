@@ -20,13 +20,30 @@
         android:textSize="30dp"
         android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="BetterDoctor API search here!"
-        android:id="@+id/textView"
+        android:id="@+id/specialtyEditText"
+        android:layout_marginTop="69dp"
         android:layout_below="@+id/findDoctorTitle"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="98dp" />
+        android:hint="Specialty"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold"
+        android:textSize="28dp"
+        android:textIsSelectable="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search for Doctors"
+        android:id="@+id/specialtySearchButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:textStyle="bold"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="20dp" />
+
 </RelativeLayout>
