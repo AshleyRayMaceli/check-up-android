@@ -9,17 +9,15 @@ public class Doctor {
     private double mLatitude;
     private double mLongitude;
     private ArrayList<String> mAddress = new ArrayList<>();
-    private ArrayList<String> mLanguages = new ArrayList<>();
     private String mBio;
 
-    public Doctor(String name, String specialty, String phone, double latitude, double longitude, ArrayList<String> address, ArrayList<String> languages, String bio) {
+    public Doctor(String name, String specialty, String phone, double latitude, double longitude, ArrayList<String> address, String bio) {
         this.mName = name;
         this.mSpecialty = specialty;
         this.mPhone = phone;
         this.mLatitude = latitude;
         this.mLongitude = longitude;
         this.mAddress = address;
-        this.mLanguages = languages;
         this.mBio = bio;
     }
 
@@ -45,10 +43,6 @@ public class Doctor {
 
     public ArrayList<String> getAddress() {
         return mAddress;
-    }
-
-    public ArrayList<String> getLanguages() {
-        return mLanguages;
     }
 
     public String getBio() {
