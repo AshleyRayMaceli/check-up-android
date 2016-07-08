@@ -3,11 +3,14 @@ package com.epicodus.checkup.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.epicodus.checkup.R;
+import com.epicodus.checkup.adapters.DoctorListAdapter;
 import com.epicodus.checkup.models.Doctor;
 import com.epicodus.checkup.services.BetterDoctorService;
 
@@ -21,9 +24,9 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class DoctorActivity extends AppCompatActivity {
-    @Bind(R.id.listView) ListView mListView;
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
-    public static final String TAG = DoctorActivity.class.getSimpleName();
+    private DoctorListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,23 +57,11 @@ public class DoctorActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        String[] doctorNames = new String[mDoctors.size()];
-                        for (int i = 0; i < doctorNames.length; i++) {
-                            doctorNames[i] = mDoctors.get(i).getName();
-                        }
-
-                        ArrayAdapter adapter = new ArrayAdapter(DoctorActivity.this, android.R.layout.simple_list_item_1, doctorNames);
-                        mListView.setAdapter(adapter);
-
-                        for (Doctor doctor : mDoctors) {
-                            Log.d(TAG, "Name: " + doctor.getName());
-                            Log.d(TAG, "Specialty: " + doctor.getSpecialty());
-                            Log.d(TAG, "Phone: " + doctor.getPhone());
-                            Log.d(TAG, "Lat: " + Double.toString(doctor.getLatitude()));
-                            Log.d(TAG, "Lon: " + Double.toString(doctor.getLongitude()));
-                            Log.d(TAG, "Address: " + doctor.getAddress());
-                            Log.d(TAG, "Bio: " + doctor.getBio());
-                        }
+                        mAdapter = new DoctorListAdapter(getApplicationContext(), mDoctors);
+                        mRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DoctorActivity.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
                     }
                 });
             }
