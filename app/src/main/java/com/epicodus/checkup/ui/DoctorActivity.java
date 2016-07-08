@@ -3,6 +3,7 @@ package com.epicodus.checkup.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,6 +23,7 @@ import okhttp3.Response;
 public class DoctorActivity extends AppCompatActivity {
     @Bind(R.id.listView) ListView mListView;
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
+    public static final String TAG = DoctorActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,16 @@ public class DoctorActivity extends AppCompatActivity {
 
                         ArrayAdapter adapter = new ArrayAdapter(DoctorActivity.this, android.R.layout.simple_list_item_1, doctorNames);
                         mListView.setAdapter(adapter);
+
+                        for (Doctor doctor : mDoctors) {
+                            Log.d(TAG, "Name: " + doctor.getName());
+                            Log.d(TAG, "Specialty: " + doctor.getSpecialty());
+                            Log.d(TAG, "Phone: " + doctor.getPhone());
+                            Log.d(TAG, "Lat: " + Double.toString(doctor.getLatitude()));
+                            Log.d(TAG, "Lon: " + Double.toString(doctor.getLongitude()));
+                            Log.d(TAG, "Address: " + doctor.getAddress());
+                            Log.d(TAG, "Bio: " + doctor.getBio());
+                        }
                     }
                 });
             }

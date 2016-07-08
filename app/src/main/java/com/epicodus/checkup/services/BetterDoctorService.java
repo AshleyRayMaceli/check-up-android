@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import okhttp3.Call;
@@ -43,20 +44,21 @@ public class BetterDoctorService {
                 for (int i = 0; i < resultsJSON.length(); i++) {
                     JSONObject doctorJSON = resultsJSON.getJSONObject(i);
                     String name = doctorJSON.getJSONArray("practices").getJSONObject(0).getString("name");
-//                    String specialty = doctorJSON.getJSONArray("specialties").getJSONObject(0).getString("actor");
-//                    String phone = doctorJSON.getJSONArray("phones").getString("number");
-//                    double latitude = doctorJSON.getJSONArray("practices").getDouble("lat");
-//                    double longitude = doctorJSON.getJSONArray("practices").getDouble("lon");
+                    String specialty = doctorJSON.getJSONArray("specialties").getJSONObject(0).getString("actor");
 
-                    ArrayList<String> address = new ArrayList<>();
-//                    JSONArray addressJSON = doctorJSON.getJSONObject("practices").getJSONArray("visit_address");
-//                    for (int y = 0; y < addressJSON.length(); y++) {
-//                        address.add(addressJSON.get(y).toString());
-//                    }
-//
-//                    String bio = doctorJSON.getString("bio");
+                    ArrayList<String> phone = new ArrayList<>();
+                    JSONArray phoneJSON = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONArray("phones");
+                    for (int y = 0; y < phoneJSON.length(); y++) {
+                        phone.add(phoneJSON.get(y).toString());
+                    }
 
-                    Doctor doctor = new Doctor(name, "", "", 6, 6, address, "");
+                    double latitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lat");
+                    double longitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lon");
+                    String address = doctorJSON.getJSONArray("practices").getJSONObject(0).getString("visit_address");
+
+                    String bio = doctorJSON.getJSONObject("profile").getString("bio");
+
+                    Doctor doctor = new Doctor(name, specialty, phone, latitude, longitude, address, bio);
                     doctors.add(doctor);
                 }
             }
