@@ -47,7 +47,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.DoctorActivity"></activity>
+        <activity android:name=".ui.DoctorListActivity" />
+        <activity android:name=".ui.DoctorDetailActivity"></activity>
     </application>
 
 </manifest>

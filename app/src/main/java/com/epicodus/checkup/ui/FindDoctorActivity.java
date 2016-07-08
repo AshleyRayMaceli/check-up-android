@@ -29,7 +29,7 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         if(v == mSpecialtySearchButton) {
             String specialty = mSpecialtyEditText.getText().toString();
-            Intent intent = new Intent(FindDoctorActivity.this, DoctorActivity.class);
+            Intent intent = new Intent(FindDoctorActivity.this, DoctorListActivity.class);
             intent.putExtra("specialty", specialty);
             startActivity(intent);
         }

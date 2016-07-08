@@ -5,9 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.epicodus.checkup.R;
 import com.epicodus.checkup.adapters.DoctorListAdapter;
@@ -23,7 +20,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class DoctorActivity extends AppCompatActivity {
+public class DoctorListActivity extends AppCompatActivity {
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
     private DoctorListAdapter mAdapter;
@@ -53,13 +50,13 @@ public class DoctorActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 mDoctors = betterDoctorService.processResults(response);
 
-                DoctorActivity.this.runOnUiThread(new Runnable() {
+                DoctorListActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
 
                         mAdapter = new DoctorListAdapter(getApplicationContext(), mDoctors);
                         mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DoctorActivity.this);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DoctorListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }
