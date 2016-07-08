@@ -1,16 +1,21 @@
 package com.epicodus.checkup.models;
 
+import org.parceler.Parcel;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+@Parcel
 public class Doctor {
-    private String mName;
-    private String mSpecialty;
-    private ArrayList<String> mPhone = new ArrayList<>();
-    private double mLatitude;
-    private double mLongitude;
-    private String mAddress;
-    private String mBio;
+    String mName;
+    String mSpecialty;
+    ArrayList<String> mPhone = new ArrayList<>();
+    double mLatitude;
+    double mLongitude;
+    String mAddress;
+    String mBio;
+
+    public Doctor() {}
 
     public Doctor(String name, String specialty, ArrayList<String> phone, double latitude, double longitude, String address, String bio) {
         this.mName = name;
