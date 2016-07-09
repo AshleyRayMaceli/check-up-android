@@ -1,6 +1,7 @@
 package com.epicodus.checkup.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.TextView;
 
 import com.epicodus.checkup.R;
 import com.epicodus.checkup.models.Doctor;
+import com.epicodus.checkup.ui.DoctorDetailActivity;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -42,7 +46,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
         return mDoctors.size();
     }
 
-    public class DoctorViewHolder extends RecyclerView.ViewHolder {
+    public class DoctorViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.doctorImageView) ImageView mDoctorImageView;
         @Bind(R.id.doctorNameTextView) TextView mDoctorNameTextView;
         @Bind(R.id.specialtyTextView) TextView mSpecialtyTextView;
@@ -53,6 +57,16 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, DoctorDetailActivity.class);
+            intent.putExtra("position", itemPosition + "");
+            intent.putExtra("doctors", Parcels.wrap(mDoctors));
+            mContext.startActivity(intent);
         }
 
         public void bindDoctor(Doctor doctor) {

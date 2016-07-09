@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:id="@+id/restaurantImageView"
+            android:id="@+id/doctorImageView"
             android:src="@drawable/plussign"
             android:scaleType="centerCrop" />
 
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Specialty"
-                android:id="@+id/ratingTextView"
+                android:id="@+id/specialtyTextView"
                 android:layout_alignTop="@+id/specialtyTextView"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
