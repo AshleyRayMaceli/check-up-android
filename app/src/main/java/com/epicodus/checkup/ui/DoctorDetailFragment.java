@@ -1,6 +1,8 @@
 package com.epicodus.checkup.ui;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,7 +20,7 @@ import org.parceler.Parcels;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class DoctorDetailFragment extends Fragment {
+public class DoctorDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.doctorImageView) ImageView mImageLabel;
     @Bind(R.id.doctorNameTextView) TextView mNameLabel;
     @Bind(R.id.specialtyTextView) TextView mSpecialtyLabel;
@@ -56,7 +58,17 @@ public class DoctorDetailFragment extends Fragment {
         mAddressLabel.setText(mDoctor.getAddress());
         mBioLabel.setText(mDoctor.getBio());
 
+        mAddressLabel.setOnClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v == mAddressLabel) {
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:" + mDoctor.getLatitude() + "," + mDoctor.getLongitude() + "?q=(" + mDoctor.getName() + ")"));
+            startActivity(mapIntent);
+        }
     }
 
 }
