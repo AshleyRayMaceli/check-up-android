@@ -46,14 +46,17 @@ public class BetterDoctorService {
                     String name = doctorJSON.getJSONArray("practices").getJSONObject(0).getString("name");
                     String specialty = doctorJSON.getJSONArray("specialties").getJSONObject(0).getString("actor");
 
+                    //need to update phone to display in phone number format with type
                     ArrayList<String> phone = new ArrayList<>();
                     JSONArray phoneJSON = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONArray("phones");
                     for (int y = 0; y < phoneJSON.length(); y++) {
-                        phone.add(phoneJSON.get(y).toString());
+                        phone.add(phoneJSON.getJSONObject(y).getString("number"));
                     }
 
                     double latitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lat");
                     double longitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lon");
+
+                    //need to update address!
                     String address = doctorJSON.getJSONArray("practices").getJSONObject(0).getString("visit_address");
 
                     String bio = doctorJSON.getJSONObject("profile").getString("bio");
