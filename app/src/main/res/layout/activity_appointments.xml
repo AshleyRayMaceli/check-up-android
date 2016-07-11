@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.epicodus.checkup.AppointmentsActivity">
+    tools:context=".ui.AppointmentsActivity">
 
     <ListView
         android:layout_width="wrap_content"
@@ -26,7 +26,8 @@
         android:layout_marginBottom="57dp"
         android:layout_above="@+id/findDoctorButton"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorTextIcons" />
 
     <Button
         android:layout_width="match_parent"
@@ -38,7 +39,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="53dp" />
+        android:layout_marginBottom="53dp"
+        android:textColor="@color/colorTextIcons" />
 
 
 </RelativeLayout>
