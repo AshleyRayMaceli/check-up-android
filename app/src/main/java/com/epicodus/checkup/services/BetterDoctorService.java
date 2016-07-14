@@ -1,5 +1,6 @@
 package com.epicodus.checkup.services;
 
+import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 
 import com.epicodus.checkup.Constants;
@@ -12,6 +13,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -57,7 +59,9 @@ public class BetterDoctorService {
                     ArrayList<String> phone = new ArrayList<>();
                     JSONArray phoneJSON = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONArray("phones");
                     for (int y = 0; y < phoneJSON.length(); y++) {
-                        phone.add(phoneJSON.getJSONObject(y).getString("number"));
+                        String number = phoneJSON.getJSONObject(y).getString("number");
+                        String formattedNumber = PhoneNumberUtils.formatNumber(number, Locale.getDefault().getCountry());
+                        phone.add(formattedNumber);
                     }
 
                     double latitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lat");
