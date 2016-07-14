@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.epicodus.checkup.R;
 
@@ -16,6 +17,7 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
 
     @Bind(R.id.specialtySearchButton) Button mSpecialtySearchButton;
     @Bind(R.id.specialtyEditText) EditText mSpecialtyEditText;
+    @Bind(R.id.cityEditText) TextView mCityEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +31,11 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         if(v == mSpecialtySearchButton) {
             String specialty = mSpecialtyEditText.getText().toString();
+            String location = mCityEditText.getText().toString();
             Intent intent = new Intent(FindDoctorActivity.this, DoctorListActivity.class);
             intent.putExtra("specialty", specialty);
+            intent.putExtra("location", location);
+
             startActivity(intent);
         }
     }

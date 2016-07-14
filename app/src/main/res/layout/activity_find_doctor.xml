@@ -71,4 +71,29 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cityEditText"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:hint="City"
+        android:textAlignment="center"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_alignEnd="@+id/betterDoctorCreditTextView"
+        android:textColor="@color/colorAccent" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/states"
+        android:prompt="@string/state_prompt"
+        android:id="@+id/spinner"
+        android:layout_alignTop="@+id/cityEditText"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/cityEditText"
+        android:layout_alignBottom="@+id/cityEditText" />
+
 </RelativeLayout>

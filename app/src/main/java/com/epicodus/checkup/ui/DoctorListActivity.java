@@ -33,13 +33,14 @@ public class DoctorListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String specialty = intent.getStringExtra("specialty");
-        getDoctors(specialty);
+        String location = intent.getStringExtra("location");
+        getDoctors(specialty, location);
     }
 
-    private void getDoctors(String specialty) {
+    private void getDoctors(String specialty, String location) {
         final BetterDoctorService betterDoctorService = new BetterDoctorService();
 
-        betterDoctorService.findDoctorsBySpecialty(specialty, new Callback() {
+        betterDoctorService.findDoctorsByLocationAndSpecialty(specialty, location, new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {
