@@ -1,5 +1,7 @@
 package com.epicodus.checkup.services;
 
+import android.util.Log;
+
 import com.epicodus.checkup.Constants;
 import com.epicodus.checkup.models.Doctor;
 
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -23,7 +26,11 @@ public class BetterDoctorService {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
-        String url = Constants.BETTER_DOCTOR_BASE_URL + specialty + "&location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=" + Constants.BETTER_DOCTOR_CONSUMER_KEY;
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BETTER_DOCTOR_BASE_URL).newBuilder();
+        urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_SPECIALTY_QUERY_PARAMETER, specialty);
+        urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_LOCATION_QUERY_PARAMETER, "or-portland");
+        urlBuilder.addQueryParameter(Constants.API_KEY_QUERY_PARAMETER, Constants.BETTER_DOCTOR_CONSUMER_KEY);
+        String url = urlBuilder.build().toString();
 
         Request request = new Request.Builder()
                 .url(url)
