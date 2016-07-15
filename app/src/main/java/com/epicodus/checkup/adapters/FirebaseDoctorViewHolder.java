@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epicodus.checkup.Constants;
@@ -34,7 +33,6 @@ public class FirebaseDoctorViewHolder extends RecyclerView.ViewHolder implements
     }
 
     public void bindDoctor(Doctor doctor) {
-        ImageView doctorImageView = (ImageView) mView.findViewById(R.id.doctorImageView);
         TextView doctorNameTextView = (TextView) mView.findViewById(R.id.doctorNameTextView);
         TextView specialtyTextView = (TextView) mView.findViewById(R.id.specialtyTextView);
 

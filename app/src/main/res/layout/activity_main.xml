@@ -49,19 +49,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login Placeholder"
-        android:id="@+id/loginButton"
-        android:textSize="20dp"
-        android:background="@color/colorSecondaryAccent"
-        android:layout_above="@+id/aboutButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="50dp"
-        android:textColor="@color/colorTextIcons" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="About Check Up"
         android:id="@+id/aboutButton"
         android:background="@color/colorAccent"

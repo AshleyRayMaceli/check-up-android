@@ -13,11 +13,6 @@
         <activity
             android:name=".ui.MainActivity"
             android:theme="@style/NoActionBarTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.AppointmentsActivity">
             <meta-data
@@ -34,9 +29,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
-        <activity
-            android:name=".ui.LogInActivity"
-            android:theme="@style/NoActionBarTheme" />
         <activity android:name=".ui.HealthActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -57,7 +49,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.SavedDoctorListActivity"></activity>
+        <activity android:name=".ui.SavedDoctorListActivity" />
+        <activity android:name=".ui.CreateAccountActivity" />
+        <activity android:name=".ui.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
