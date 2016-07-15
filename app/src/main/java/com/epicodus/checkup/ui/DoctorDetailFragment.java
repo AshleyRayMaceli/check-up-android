@@ -11,9 +11,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.epicodus.checkup.Constants;
 import com.epicodus.checkup.R;
 import com.epicodus.checkup.models.Doctor;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.parceler.Parcels;
 
@@ -59,15 +63,23 @@ public class DoctorDetailFragment extends Fragment implements View.OnClickListen
         mBioLabel.setText(mDoctor.getBio());
 
         mAddressLabel.setOnClickListener(this);
+        mSaveDoctorButton.setOnClickListener(this);
 
         return view;
     }
 
     @Override
     public void onClick(View v) {
-        if(v == mAddressLabel) {
+        if (v == mAddressLabel) {
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:" + mDoctor.getLatitude() + "," + mDoctor.getLongitude() + "?q=(" + mDoctor.getName() + ")"));
             startActivity(mapIntent);
+        }
+        if (v == mSaveDoctorButton) {
+            DatabaseReference doctorRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_DOCTORS);
+            doctorRef.push().setValue(mDoctor);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }
 

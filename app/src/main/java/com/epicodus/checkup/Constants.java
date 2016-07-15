@@ -6,4 +6,5 @@ public class Constants {
     public static final String BETTER_DOCTOR_SPECIALTY_QUERY_PARAMETER = "specialty_uid";
     public static final String BETTER_DOCTOR_LOCATION_QUERY_PARAMETER = "location";
     public static final String API_KEY_QUERY_PARAMETER = "user_key";
+    public static final String FIREBASE_CHILD_DOCTORS = "doctors";
 }

@@ -7,52 +7,52 @@ import java.util.ArrayList;
 
 @Parcel
 public class Doctor {
-    String mName;
-    String mSpecialty;
-    ArrayList<String> mPhone = new ArrayList<>();
-    double mLatitude;
-    double mLongitude;
-    String mAddress;
-    String mBio;
+    String name;
+    String specialty;
+    ArrayList<String> phone = new ArrayList<>();
+    double latitude;
+    double longitude;
+    String address;
+    String bio;
 
     public Doctor() {}
 
     public Doctor(String name, String specialty, ArrayList<String> phone, double latitude, double longitude, String address, String bio) {
-        this.mName = name;
-        this.mSpecialty = specialty;
-        this.mPhone = phone;
-        this.mLatitude = latitude;
-        this.mLongitude = longitude;
-        this.mAddress = address;
-        this.mBio = bio;
+        this.name = name;
+        this.specialty = specialty;
+        this.phone = phone;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.address = address;
+        this.bio = bio;
     }
 
     public String getName() {
-        return mName;
+        return name;
     }
 
     public String getSpecialty() {
-        return mSpecialty;
+        return specialty;
     }
 
     public ArrayList<String> getPhone() {
-        return mPhone;
+        return phone;
     }
 
     public double getLatitude() {
-        return mLatitude;
+        return latitude;
     }
 
     public double getLongitude() {
-        return mLongitude;
+        return longitude;
     }
 
     public String getAddress() {
-        return mAddress;
+        return address;
     }
 
     public String getBio() {
-        return mBio;
+        return bio;
     }
 
 }
