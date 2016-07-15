@@ -23,11 +23,10 @@
         android:id="@+id/newAppointmentButton"
         android:textSize="20dp"
         android:background="@color/colorAccent"
-        android:layout_marginBottom="57dp"
+        android:textColor="@color/colorTextIcons"
         android:layout_above="@+id/findDoctorButton"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textColor="@color/colorTextIcons" />
+        android:layout_marginBottom="34dp" />
 
     <Button
         android:layout_width="match_parent"
@@ -36,11 +35,21 @@
         android:id="@+id/findDoctorButton"
         android:textSize="20dp"
         android:background="@color/colorSecondaryAccent"
+        android:textColor="@color/colorTextIcons"
+        android:layout_above="@+id/savedDoctorsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saved Doctors"
+        android:id="@+id/savedDoctorsButton"
+        android:textSize="20dp"
+        android:background="@color/colorSecondaryAccent"
+        android:textColor="@color/colorTextIcons"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="53dp"
-        android:textColor="@color/colorTextIcons" />
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

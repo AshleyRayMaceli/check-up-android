@@ -48,15 +48,16 @@
                 android:value=".ui.MainActivity" />
         </activity>
         <activity android:name=".ui.DoctorListActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".ui.MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
         </activity>
         <activity android:name=".ui.DoctorDetailActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
+        <activity android:name=".ui.SavedDoctorListActivity"></activity>
     </application>
 
 </manifest>
