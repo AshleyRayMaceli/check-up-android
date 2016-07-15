@@ -24,11 +24,11 @@ import okhttp3.Response;
 
 public class BetterDoctorService {
 
-    public static void findDoctorsByLocationAndSpecialty(String specialty, String location, String state, Callback callback) {
+    public static void findDoctorsByLocationAndSpecialty(String specialty, String city, String state, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
-        String locationSlug = state + "-" + location;
+        String locationSlug = state + "-" + city;
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BETTER_DOCTOR_BASE_URL).newBuilder();
         urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_SPECIALTY_QUERY_PARAMETER, specialty);

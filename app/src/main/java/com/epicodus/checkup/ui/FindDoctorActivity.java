@@ -50,7 +50,7 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         if(v == mSpecialtySearchButton) {
             String specialty = mSpecialtyEditText.getText().toString().toLowerCase();
-            String location = mCityEditText.getText().toString().toLowerCase();
+            String city = mCityEditText.getText().toString().toLowerCase();
             String state = mStateSpinner.getSelectedItem().toString().toLowerCase();
 
             if(!(specialty).equals("")) {
@@ -59,9 +59,8 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
 
             Intent intent = new Intent(FindDoctorActivity.this, DoctorListActivity.class);
             intent.putExtra("specialty", specialty);
-            intent.putExtra("location", location);
+            intent.putExtra("city", city);
             intent.putExtra("state", state);
-            Log.d("STATE", state + "");
 
             startActivity(intent);
         }
