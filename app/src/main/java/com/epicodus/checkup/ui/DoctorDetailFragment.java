@@ -27,7 +27,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class DoctorDetailFragment extends Fragment implements View.OnClickListener {
-    @Bind(R.id.doctorImageView) ImageView mImageLabel;
+//    @Bind(R.id.doctorImageView) ImageView mImageLabel;
     @Bind(R.id.doctorNameTextView) TextView mNameLabel;
     @Bind(R.id.specialtyTextView) TextView mSpecialtyLabel;
     @Bind(R.id.websiteTextView) TextView mWebsiteLabel;

@@ -10,16 +10,9 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimary">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:id="@+id/doctorImageView"
-            android:src="@drawable/plussign"
-            android:scaleType="centerCrop" />
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="95dp"
             android:background="@android:color/white"
             android:paddingTop="20dp"
             android:paddingLeft="10dp"
@@ -42,11 +35,10 @@
                 android:layout_height="wrap_content"
                 android:text="Specialty"
                 android:id="@+id/specialtyTextView"
-                android:layout_alignTop="@+id/specialtyTextView"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
                 android:textColor="@color/colorAccent"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -99,6 +91,10 @@
                     android:layout_marginBottom="10dp"
                     android:gravity="center_vertical"/>
 
+                <ScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -109,12 +105,15 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     android:gravity="center_vertical"/>
+
+                </ScrollView>
+
             </LinearLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add Doctor to Appointment"
+                android:text="Save Doctor"
                 android:id="@+id/saveDoctorButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorAccent"
