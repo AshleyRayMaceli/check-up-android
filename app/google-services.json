@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "512379865667",
+    "firebase_url": "https://check-up-android.firebaseio.com",
+    "project_id": "check-up-android",
+    "storage_bucket": "check-up-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512379865667:android:3249acb0d3e22ca9",
+        "android_client_info": {
+          "package_name": "com.epicodus.checkup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512379865667-rdtmbeh9cir7aatgfrsaur9i7f924b5a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epicodus.checkup",
+            "certificate_hash": "0A7CA5C5BA6568AC10A2AA429CD4DD7CA6412298"
+          }
+        },
+        {
+          "client_id": "512379865667-elcepsinfa7t7sgt2kf5i6olg6u1erdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTZZx3klo14dHLml0jcjt8rZfeOMocCI8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512379865667-elcepsinfa7t7sgt2kf5i6olg6u1erdm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
