@@ -1,11 +1,15 @@
 package com.epicodus.checkup.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
+import com.epicodus.checkup.Constants;
 import com.epicodus.checkup.R;
 import com.epicodus.checkup.adapters.DoctorListAdapter;
 import com.epicodus.checkup.models.Doctor;
@@ -25,6 +29,9 @@ public class DoctorListActivity extends AppCompatActivity {
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
     private DoctorListAdapter mAdapter;
 
+    private SharedPreferences mSharedPreferences;
+    private String mRecentSpecialty;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +42,10 @@ public class DoctorListActivity extends AppCompatActivity {
         String specialty = intent.getStringExtra("specialty");
         String location = intent.getStringExtra("location");
         getDoctors(specialty, location);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentSpecialty = mSharedPreferences.getString(Constants.PREFERENCES_SPECIALTY_KEY, null);
+        Log.d("Shared Pref Location", mRecentSpecialty);
     }
 
     private void getDoctors(String specialty, String location) {
