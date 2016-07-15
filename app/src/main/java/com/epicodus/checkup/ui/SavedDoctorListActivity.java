@@ -10,6 +10,8 @@ import com.epicodus.checkup.R;
 import com.epicodus.checkup.adapters.FirebaseDoctorViewHolder;
 import com.epicodus.checkup.models.Doctor;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -25,11 +27,17 @@ public class SavedDoctorListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_doctor);
         ButterKnife.bind(this);
 
-        mDoctorReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        mDoctorReference = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_CHILD_DOCTORS)
+                .child(uid);
+
         setUpFirebaseAdapter();
     }
 

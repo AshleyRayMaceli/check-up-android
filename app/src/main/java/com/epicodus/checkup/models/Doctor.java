@@ -14,6 +14,7 @@ public class Doctor {
     double longitude;
     String address;
     String bio;
+    private String pushId;
 
     public Doctor() {}
 
@@ -53,6 +54,14 @@ public class Doctor {
 
     public String getBio() {
         return bio;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }
