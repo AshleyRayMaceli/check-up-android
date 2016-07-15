@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.epicodus.checkup.Constants;
@@ -26,6 +27,7 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     @Bind(R.id.specialtySearchButton) Button mSpecialtySearchButton;
     @Bind(R.id.specialtyEditText) EditText mSpecialtyEditText;
     @Bind(R.id.cityEditText) TextView mCityEditText;
+    @Bind(R.id.stateSpinner) Spinner mStateSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +49,9 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         if(v == mSpecialtySearchButton) {
-            String specialty = mSpecialtyEditText.getText().toString();
-            String location = mCityEditText.getText().toString();
+            String specialty = mSpecialtyEditText.getText().toString().toLowerCase();
+            String location = mCityEditText.getText().toString().toLowerCase();
+            String state = mStateSpinner.getSelectedItem().toString().toLowerCase();
 
             if(!(specialty).equals("")) {
                 addToSharedPreferences(specialty);
@@ -57,6 +60,8 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
             Intent intent = new Intent(FindDoctorActivity.this, DoctorListActivity.class);
             intent.putExtra("specialty", specialty);
             intent.putExtra("location", location);
+            intent.putExtra("state", state);
+            Log.d("STATE", state + "");
 
             startActivity(intent);
         }

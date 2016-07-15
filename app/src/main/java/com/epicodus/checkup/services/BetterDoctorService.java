@@ -24,13 +24,15 @@ import okhttp3.Response;
 
 public class BetterDoctorService {
 
-    public static void findDoctorsByLocationAndSpecialty(String specialty, String location, Callback callback) {
+    public static void findDoctorsByLocationAndSpecialty(String specialty, String location, String state, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
+        String locationSlug = state + "-" + location;
+
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BETTER_DOCTOR_BASE_URL).newBuilder();
         urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_SPECIALTY_QUERY_PARAMETER, specialty);
-        urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_LOCATION_QUERY_PARAMETER, location);
+        urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_LOCATION_QUERY_PARAMETER, locationSlug);
         urlBuilder.addQueryParameter(Constants.API_KEY_QUERY_PARAMETER, Constants.BETTER_DOCTOR_CONSUMER_KEY);
         String url = urlBuilder.build().toString();
 

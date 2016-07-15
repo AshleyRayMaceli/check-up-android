@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:entries="@array/states"
         android:prompt="@string/state_prompt"
-        android:id="@+id/spinner"
+        android:id="@+id/stateSpinner"
         android:layout_alignTop="@+id/cityEditText"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/cityEditText"

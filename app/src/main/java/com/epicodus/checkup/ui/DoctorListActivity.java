@@ -41,17 +41,17 @@ public class DoctorListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String specialty = intent.getStringExtra("specialty");
         String location = intent.getStringExtra("location");
-        getDoctors(specialty, location);
+        String state = intent.getStringExtra("state");
+        getDoctors(specialty, location, state);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentSpecialty = mSharedPreferences.getString(Constants.PREFERENCES_SPECIALTY_KEY, null);
-        Log.d("Shared Pref Specialty", mRecentSpecialty);
     }
 
-    private void getDoctors(String specialty, String location) {
+    private void getDoctors(String specialty, String location, String state) {
         final BetterDoctorService betterDoctorService = new BetterDoctorService();
 
-        betterDoctorService.findDoctorsByLocationAndSpecialty(specialty, location, new Callback() {
+        betterDoctorService.findDoctorsByLocationAndSpecialty(specialty, location, state, new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {
