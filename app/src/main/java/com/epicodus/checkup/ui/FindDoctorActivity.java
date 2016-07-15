@@ -21,6 +21,7 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
+    private String mSpecialtyPreference;
 
     @Bind(R.id.specialtySearchButton) Button mSpecialtySearchButton;
     @Bind(R.id.specialtyEditText) EditText mSpecialtyEditText;
@@ -35,6 +36,12 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
+
+        mSpecialtyPreference = mSharedPreferences.getString(Constants.PREFERENCES_SPECIALTY_KEY, null);
+
+        if (mSpecialtyPreference != null) {
+            mSpecialtyEditText.setText(mSpecialtyPreference);
+        }
     }
 
     @Override

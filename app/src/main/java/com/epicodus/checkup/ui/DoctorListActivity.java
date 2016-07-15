@@ -45,7 +45,7 @@ public class DoctorListActivity extends AppCompatActivity {
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentSpecialty = mSharedPreferences.getString(Constants.PREFERENCES_SPECIALTY_KEY, null);
-        Log.d("Shared Pref Location", mRecentSpecialty);
+        Log.d("Shared Pref Specialty", mRecentSpecialty);
     }
 
     private void getDoctors(String specialty, String location) {
