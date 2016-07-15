@@ -23,6 +23,8 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
     private String mSpecialtyPreference;
+    private String mCityPreference;
+    private String mStatePreference;
 
     @Bind(R.id.specialtySearchButton) Button mSpecialtySearchButton;
     @Bind(R.id.specialtyEditText) EditText mSpecialtyEditText;
@@ -40,9 +42,11 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
         mEditor = mSharedPreferences.edit();
 
         mSpecialtyPreference = mSharedPreferences.getString(Constants.PREFERENCES_SPECIALTY_KEY, null);
+        mCityPreference = mSharedPreferences.getString(Constants.PREFERENCES_CITY_KEY, null);
 
         if (mSpecialtyPreference != null) {
             mSpecialtyEditText.setText(mSpecialtyPreference);
+            mCityEditText.setText(mCityPreference);
         }
     }
 
@@ -53,8 +57,8 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
             String city = mCityEditText.getText().toString().toLowerCase();
             String state = mStateSpinner.getSelectedItem().toString().toLowerCase();
 
-            if(!(specialty).equals("")) {
-                addToSharedPreferences(specialty);
+            if( (!(specialty).equals("")) && (!(city).equals(""))) {
+                addToSharedPreferences(specialty, city);
             }
 
             Intent intent = new Intent(FindDoctorActivity.this, DoctorListActivity.class);
@@ -66,7 +70,8 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    private void addToSharedPreferences(String specialty) {
+    private void addToSharedPreferences(String specialty, String city) {
         mEditor.putString(Constants.PREFERENCES_SPECIALTY_KEY, specialty).apply();
+        mEditor.putString(Constants.PREFERENCES_CITY_KEY, city).apply();
     }
 }
