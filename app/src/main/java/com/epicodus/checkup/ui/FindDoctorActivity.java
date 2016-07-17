@@ -24,7 +24,7 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     private SharedPreferences.Editor mEditor;
     private String mSpecialtyPreference;
     private String mCityPreference;
-    private String mStatePreference;
+    private int mSelectedPosition;
 
     @Bind(R.id.specialtySearchButton) Button mSpecialtySearchButton;
     @Bind(R.id.specialtyEditText) EditText mSpecialtyEditText;
@@ -47,6 +47,7 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
         if (mSpecialtyPreference != null) {
             mSpecialtyEditText.setText(mSpecialtyPreference);
             mCityEditText.setText(mCityPreference);
+            mStateSpinner.setSelection(mSharedPreferences.getInt(Constants.PREFERENCES_STATE_KEY, 0));
         }
     }
 
@@ -56,9 +57,10 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
             String specialty = mSpecialtyEditText.getText().toString().toLowerCase();
             String city = mCityEditText.getText().toString().toLowerCase();
             String state = mStateSpinner.getSelectedItem().toString().toLowerCase();
+            mSelectedPosition = mStateSpinner.getSelectedItemPosition();
 
             if( (!(specialty).equals("")) && (!(city).equals(""))) {
-                addToSharedPreferences(specialty, city);
+                addToSharedPreferences(specialty, city, mSelectedPosition);
             }
 
             Intent intent = new Intent(FindDoctorActivity.this, DoctorListActivity.class);
@@ -70,8 +72,10 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    private void addToSharedPreferences(String specialty, String city) {
+    private void addToSharedPreferences(String specialty, String city, int state) {
         mEditor.putString(Constants.PREFERENCES_SPECIALTY_KEY, specialty).apply();
         mEditor.putString(Constants.PREFERENCES_CITY_KEY, city).apply();
+        mEditor.putInt(Constants.PREFERENCES_STATE_KEY, state);
+        mEditor.commit();
     }
 }

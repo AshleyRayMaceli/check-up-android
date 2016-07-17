@@ -9,5 +9,5 @@ public class Constants {
     public static final String FIREBASE_CHILD_DOCTORS = "doctors";
     public static final String PREFERENCES_SPECIALTY_KEY = "specialty";
     public static final String PREFERENCES_CITY_KEY = "city";
-    public static final String PREFERENCES_STATE_KEY = "state";
+    public static final String PREFERENCES_STATE_KEY = "spinnerSelection";
 }

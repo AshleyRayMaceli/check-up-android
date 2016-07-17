@@ -29,10 +29,6 @@ public class DoctorListActivity extends AppCompatActivity {
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
     private DoctorListAdapter mAdapter;
 
-    private SharedPreferences mSharedPreferences;
-    private String mRecentSpecialty;
-    private String mRecentCity;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +40,6 @@ public class DoctorListActivity extends AppCompatActivity {
         String city = intent.getStringExtra("city");
         String state = intent.getStringExtra("state");
         getDoctors(specialty, city, state);
-
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentSpecialty = mSharedPreferences.getString(Constants.PREFERENCES_SPECIALTY_KEY, null);
-        mRecentCity = mSharedPreferences.getString(Constants.PREFERENCES_CITY_KEY, null);
     }
 
     private void getDoctors(String specialty, String city, String state) {
