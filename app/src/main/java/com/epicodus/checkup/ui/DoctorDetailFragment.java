@@ -27,12 +27,14 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class DoctorDetailFragment extends Fragment implements View.OnClickListener {
-//    @Bind(R.id.doctorImageView) ImageView mImageLabel;
     @Bind(R.id.doctorNameTextView) TextView mNameLabel;
     @Bind(R.id.specialtyTextView) TextView mSpecialtyLabel;
-    @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
     @Bind(R.id.phoneTextView) TextView mPhoneLabel;
-    @Bind(R.id.addressTextView) TextView mAddressLabel;
+    @Bind(R.id.streetTextView) TextView mStreetLabel;
+    @Bind(R.id.street2TextView) TextView mStreet2Label;
+    @Bind(R.id.cityTextView) TextView mCityLabel;
+    @Bind(R.id.stateTextView) TextView mStateLabel;
+    @Bind(R.id.zipTextView) TextView mZipLabel;
     @Bind(R.id.bioTextView) TextView mBioLabel;
     @Bind(R.id.saveDoctorButton) Button mSaveDoctorButton;
 
@@ -61,10 +63,18 @@ public class DoctorDetailFragment extends Fragment implements View.OnClickListen
         mNameLabel.setText(mDoctor.getName());
         mSpecialtyLabel.setText(mDoctor.getSpecialty());
         mPhoneLabel.setText(android.text.TextUtils.join(", ", mDoctor.getPhone()));
-        mAddressLabel.setText(mDoctor.getAddress());
+        mStreetLabel.setText(mDoctor.getStreet());
+        mStreet2Label.setText(mDoctor.getStreet2());
+        mCityLabel.setText(mDoctor.getCity());
+        mStateLabel.setText(mDoctor.getState());
+        mZipLabel.setText(mDoctor.getZip());
         mBioLabel.setText(mDoctor.getBio());
 
-        mAddressLabel.setOnClickListener(this);
+        mStreetLabel.setOnClickListener(this);
+        mStreet2Label.setOnClickListener(this);
+        mCityLabel.setOnClickListener(this);
+        mStateLabel.setOnClickListener(this);
+        mZipLabel.setOnClickListener(this);
         mSaveDoctorButton.setOnClickListener(this);
 
         return view;
@@ -72,7 +82,7 @@ public class DoctorDetailFragment extends Fragment implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        if (v == mAddressLabel) {
+        if (v == mStreetLabel || v == mStreet2Label || v == mCityLabel || v == mStateLabel || v == mZipLabel) {
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:" + mDoctor.getLatitude() + "," + mDoctor.getLongitude() + "?q=(" + mDoctor.getName() + ")"));
             startActivity(mapIntent);
         }

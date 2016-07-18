@@ -61,17 +61,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Website"
-                    android:id="@+id/websiteTextView"
-                    android:textColor="@color/colorTextIcons"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="(503) 223-1282"
                     android:id="@+id/phoneTextView"
                     android:textColor="@color/colorTextIcons"
@@ -83,17 +72,56 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="123 SW Best Ever Ave. Portland, Oregon, 97222"
-                    android:id="@+id/addressTextView"
+                    android:text="street"
+                    android:id="@+id/streetTextView"
+                    android:textColor="@color/colorTextIcons"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="street2"
+                    android:id="@+id/street2TextView"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     android:gravity="center_vertical"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="city"
+                    android:id="@+id/cityTextView"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorTextIcons"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State"
+                    android:id="@+id/stateTextView"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTextIcons" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="zip"
+                    android:id="@+id/zipTextView"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorTextIcons" />
+
                 <ScrollView
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"

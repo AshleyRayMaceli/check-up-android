@@ -67,13 +67,14 @@ public class BetterDoctorService {
 
                     double latitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lat");
                     double longitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lon");
-
-                    //need to update address!
-                    String address = doctorJSON.getJSONArray("practices").getJSONObject(0).getString("visit_address");
-
+                    String street = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street");
+                    String street2 = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street2");
+                    String city = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("city");
+                    String state = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("state");
+                    String zip = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("zip");
                     String bio = doctorJSON.getJSONObject("profile").getString("bio");
 
-                    Doctor doctor = new Doctor(name, specialty, phone, latitude, longitude, address, bio);
+                    Doctor doctor = new Doctor(name, specialty, phone, latitude, longitude, street, street2, city, state, zip, bio);
                     doctors.add(doctor);
                 }
             }
