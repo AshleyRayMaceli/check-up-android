@@ -1,6 +1,5 @@
 package com.epicodus.checkup.ui;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,9 +16,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class HealthActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.newAilmentInput) EditText mNewAilmentInput;
+    @Bind(R.id.ailmentTitleEditText) EditText mAilmentTitleEditText;
+    @Bind(R.id.ailmentNotesEditText) EditText mAilmentNotesEditText;
     @Bind(R.id.addAilmentButton) Button mAddAilmentButton;
     @Bind(R.id.ailmentsListView) ListView mAilmentsListView;
+
     private ArrayList<String> allUserAilments = new ArrayList<>();
 
     @Override
@@ -36,9 +37,13 @@ public class HealthActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if(v == mAddAilmentButton) {
-            String ailment = mNewAilmentInput.getText().toString();
-            allUserAilments.add(ailment);
-            mNewAilmentInput.setText("");
+            String ailmentTitle = mAilmentTitleEditText.getText().toString();
+            String ailmentNotes = mAilmentNotesEditText.getText().toString();
+
+            allUserAilments.add(ailmentTitle);
+
+            mAilmentTitleEditText.setText("");
+            mAilmentNotesEditText.setText("");
         }
     }
 }

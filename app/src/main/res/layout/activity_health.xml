@@ -21,8 +21,8 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/newAilmentInput"
-        android:hint="New Input Here"
+        android:id="@+id/ailmentTitleEditText"
+        android:hint="Ailment Title Here"
         android:layout_below="@+id/ailmentFormTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp" />
@@ -34,15 +34,29 @@
         android:id="@+id/addAilmentButton"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorTextIcons"
-        android:layout_below="@+id/newAilmentInput"
+        android:layout_marginBottom="72dp"
+        android:layout_above="@+id/ailmentsListView"
         android:layout_centerHorizontal="true" />
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="100dp"
         android:id="@+id/ailmentsListView"
-        android:layout_below="@+id/addAilmentButton"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/ailmentNotesEditText"
+        android:layout_below="@+id/ailmentTitleEditText"
+        android:layout_alignStart="@+id/ailmentTitleEditText"
+        android:layout_marginTop="53dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="40dp" />
+        android:layout_above="@+id/addAilmentButton"
+        android:hint="Additional Notes Here"
+        android:textAlignment="center"
+        android:background="@color/colorPrimaryLight" />
 </RelativeLayout>
