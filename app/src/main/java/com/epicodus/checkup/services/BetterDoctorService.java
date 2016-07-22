@@ -75,7 +75,7 @@ public class BetterDoctorService {
                     try {
                         street2 = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street2");
                     } catch (JSONException e) {
-                        street2 = null;
+                        street2 = "";
                     }
 
                     String city = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("city");
