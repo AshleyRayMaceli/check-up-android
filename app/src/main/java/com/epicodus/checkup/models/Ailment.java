@@ -5,6 +5,8 @@ public class Ailment {
     String notes;
     private String pushId;
 
+    public Ailment() {}
+
     public Ailment(String title, String notes) {
         this.title = title;
         this.notes = notes;
