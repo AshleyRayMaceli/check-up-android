@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.epicodus.checkup.Constants;
 import com.epicodus.checkup.R;
 import com.epicodus.checkup.models.Ailment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -47,9 +49,13 @@ public class HealthActivity extends AppCompatActivity implements View.OnClickLis
 
             Ailment ailment = new Ailment(ailmentTitle, ailmentNotes);
 
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+
             DatabaseReference ailmentRef = FirebaseDatabase
                     .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_AILMENTS);
+                    .getReference(Constants.FIREBASE_CHILD_AILMENTS)
+                    .child(uid);
 
             DatabaseReference pushRef = ailmentRef.push();
             String pushId = pushRef.getKey();
