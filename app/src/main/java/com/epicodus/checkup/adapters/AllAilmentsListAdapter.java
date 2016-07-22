@@ -1,6 +1,7 @@
 package com.epicodus.checkup.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.widget.TextView;
 
 import com.epicodus.checkup.R;
 import com.epicodus.checkup.models.Ailment;
+import com.epicodus.checkup.ui.AilmentDetailActivity;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -41,7 +45,7 @@ public class AllAilmentsListAdapter extends RecyclerView.Adapter<AllAilmentsList
         return mAllAilments.size();
     }
 
-    public class AllAilmentsViewHolder extends RecyclerView.ViewHolder {
+    public class AllAilmentsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.ailmentTitleTextView) TextView mAilmentTitleTextView;
 
         private Context mContext;
@@ -50,6 +54,16 @@ public class AllAilmentsListAdapter extends RecyclerView.Adapter<AllAilmentsList
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, AilmentDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("ailments", Parcels.wrap(mAllAilments));
+            mContext.startActivity(intent);
         }
 
         public void bindAllAilments(Ailment ailment) {

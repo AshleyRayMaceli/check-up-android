@@ -1,5 +1,8 @@
 package com.epicodus.checkup.models;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Ailment {
     String title;
     String notes;

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AilmentDetailFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Ailment Title"
+            android:id="@+id/ailmentTitleTextView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Ailment Notes"
+            android:id="@+id/ailmentNotesTextView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="150dp"
+            android:textAlignment="center"
+            android:padding="10dp" />
+    </LinearLayout>
+</RelativeLayout>
