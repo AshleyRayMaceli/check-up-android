@@ -40,6 +40,8 @@ public class BetterDoctorService {
                 .url(url)
                 .build();
 
+        Log.d("URL", request + "");
+
         Call call = client.newCall(request);
         call.enqueue(callback);
     }
@@ -68,7 +70,14 @@ public class BetterDoctorService {
                     double latitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lat");
                     double longitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lon");
                     String street = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street");
-                    String street2 = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street2");
+
+                    String street2;
+                    try {
+                        street2 = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street2");
+                    } catch (JSONException e) {
+                        street2 = null;
+                    }
+
                     String city = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("city");
                     String state = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("state");
                     String zip = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("zip");
