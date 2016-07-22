@@ -1,5 +1,6 @@
 package com.epicodus.checkup.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,9 +27,7 @@ public class HealthActivity extends AppCompatActivity implements View.OnClickLis
     @Bind(R.id.ailmentTitleEditText) EditText mAilmentTitleEditText;
     @Bind(R.id.ailmentNotesEditText) EditText mAilmentNotesEditText;
     @Bind(R.id.addAilmentButton) Button mAddAilmentButton;
-    @Bind(R.id.ailmentsListView) ListView mAilmentsListView;
-
-    private ArrayList<String> allUserAilments = new ArrayList<>();
+    @Bind(R.id.allAilmentsButton) Button mAllAilmentsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +35,7 @@ public class HealthActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_health);
         ButterKnife.bind(this);
         mAddAilmentButton.setOnClickListener(this);
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, allUserAilments);
-        mAilmentsListView.setAdapter(adapter);
+        mAllAilmentsButton.setOnClickListener(this);
     }
 
     @Override
@@ -62,11 +59,14 @@ public class HealthActivity extends AppCompatActivity implements View.OnClickLis
             ailment.setPushId(pushId);
             pushRef.setValue(ailment);
 
-            allUserAilments.add(ailmentTitle);
-
             Toast.makeText(this, "Save Successful!", Toast.LENGTH_SHORT).show();
             mAilmentTitleEditText.setText("");
             mAilmentNotesEditText.setText("");
+        }
+
+        if(v == mAllAilmentsButton) {
+            Intent intent = new Intent(HealthActivity.this, AilmentsListActivity.class);
+            startActivity(intent);
         }
     }
 }
