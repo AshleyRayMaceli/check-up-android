@@ -1,6 +1,7 @@
 package com.epicodus.checkup.ui;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epicodus.checkup.Constants;
@@ -28,12 +30,17 @@ public class HealthActivity extends AppCompatActivity implements View.OnClickLis
     @Bind(R.id.ailmentNotesEditText) EditText mAilmentNotesEditText;
     @Bind(R.id.addAilmentButton) Button mAddAilmentButton;
     @Bind(R.id.allAilmentsButton) Button mAllAilmentsButton;
+    @Bind(R.id.ailmentFormTitle) TextView mAilmentFormTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health);
         ButterKnife.bind(this);
+
+        Typeface questrialFont = Typeface.createFromAsset(getAssets(), "fonts/Questrial-Regular.otf");
+        mAilmentFormTitle.setTypeface(questrialFont);
+
         mAddAilmentButton.setOnClickListener(this);
         mAllAilmentsButton.setOnClickListener(this);
     }

@@ -56,7 +56,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.AilmentsListActivity" />
-        <activity android:name=".ui.AilmentDetailActivity"></activity>
+        <activity android:name=".ui.AilmentDetailActivity" />
     </application>
 
 </manifest>

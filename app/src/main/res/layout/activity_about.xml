@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.epicodus.checkup.AboutActivity">
+    tools:context="com.epicodus.checkup.ui.AboutActivity"
+    android:background="@drawable/blue_watercolor">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="About Check Up"
+        android:text="About CheckUp"
         android:id="@+id/aboutTitle"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -23,21 +24,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check Up is a new kind of health tracking app. Keep track of your important health questions and concerns. Add those to your scheduled appointments and refer to it during your appointment. It is so easy to forget a question you wanted to ask your Doctor and it's too often that you only remember after the appointment! Check Up wants to help keep these records organized and available for you to make the most of your appointments! Check Up is meant to be used as a way to track these ailments, appointments, doctor's notes and smart reminders through your life to make you the healthiest and happiest you can be!"
+        android:text="CheckUp is a new kind of health tracking app. Keep track of your important health questions and concerns. Add those to your scheduled appointments and refer to it during your appointment. It is so easy to forget a question you wanted to ask your Doctor and it's too often that you only remember after the appointment! CheckUp wants to help keep these records organized and available for you to make the most of your appointments! CheckUp is meant to be used as a way to track these ailments, appointments, doctor's notes and smart reminders through your life to make you the healthiest and happiest you can be!"
         android:id="@+id/aboutTextView"
-        android:textSize="18dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="center" />
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:padding="15dp"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Future Image Here"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/aboutTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
 </RelativeLayout>
