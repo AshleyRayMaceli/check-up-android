@@ -13,15 +13,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Welcome to CheckUp!"
+        android:text="CheckUp!"
         android:id="@+id/mainTitleTextView"
         android:textStyle="bold"
         android:textColor="@color/colorPrimaryText"
         android:drawableRight="@drawable/ic_done_black_24dp"
-        android:textSize="30dp"
+        android:textSize="50dp"
+        android:contextClickable="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:contextClickable="true" />
+        android:layout_marginTop="162dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -31,9 +32,8 @@
         android:background="@drawable/round_button"
         android:textSize="20dp"
         android:textColor="@color/colorTextIcons"
-        android:layout_marginTop="85dp"
         android:backgroundTint="@color/colorAccent"
-        android:layout_below="@+id/mainTitleTextView"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/mainTitleTextView"
         android:layout_alignEnd="@+id/mainTitleTextView" />
 
@@ -41,7 +41,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="400dp">
+        android:layout_marginTop="300dp">
 
         <LinearLayout
             android:orientation="vertical"
@@ -61,7 +61,8 @@
         android:layout_alignParentEnd="true"
         android:textColor="@color/colorTextIcons"
         android:backgroundTint="@color/colorPrimary"
-        android:layout_gravity="bottom" />
+        android:layout_gravity="bottom"
+        android:layout_marginRight="5dp" />
         </LinearLayout>
 
     <LinearLayout
@@ -79,7 +80,16 @@
         android:textSize="20dp"
         android:background="@drawable/round_button"
         android:textColor="@color/colorTextIcons"
-        android:backgroundTint="@color/colorAccent" />
+        android:backgroundTint="@color/colorAccent"
+        android:layout_marginLeft="5dp" />
     </LinearLayout>
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp" />
 </RelativeLayout>

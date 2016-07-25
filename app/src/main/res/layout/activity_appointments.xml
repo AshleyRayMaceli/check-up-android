@@ -22,11 +22,11 @@
         android:text="Add An Appointment"
         android:id="@+id/newAppointmentButton"
         android:textSize="20dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/round_button"
         android:textColor="@color/colorTextIcons"
-        android:layout_above="@+id/findDoctorButton"
+        android:layout_below="@+id/appointmentsListView"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="34dp" />
+        android:backgroundTint="@color/colorSecondaryAccent" />
 
     <Button
         android:layout_width="match_parent"
@@ -34,11 +34,12 @@
         android:text="Find A Doctor"
         android:id="@+id/findDoctorButton"
         android:textSize="20dp"
-        android:background="@color/colorSecondaryAccent"
+        android:background="@drawable/round_button"
         android:textColor="@color/colorTextIcons"
         android:layout_above="@+id/savedDoctorsButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/colorAccent" />
 
     <Button
         android:layout_width="match_parent"
@@ -46,10 +47,11 @@
         android:text="Saved Doctors"
         android:id="@+id/savedDoctorsButton"
         android:textSize="20dp"
-        android:background="@color/colorSecondaryAccent"
+        android:background="@drawable/round_button"
         android:textColor="@color/colorTextIcons"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/colorAccent" />
 
 
 </RelativeLayout>
