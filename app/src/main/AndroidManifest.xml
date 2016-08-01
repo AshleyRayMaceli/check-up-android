@@ -57,6 +57,15 @@
         </activity>
         <activity android:name=".ui.AilmentsListActivity" />
         <activity android:name=".ui.AilmentDetailActivity" />
+        <activity
+            android:name=".ui.NavigationDrawerActivity"
+            android:label="@string/title_activity_navigation_drawer"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.checkup.ui.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
