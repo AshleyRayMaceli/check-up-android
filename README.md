@@ -1,4 +1,4 @@
-![Screenshots of progress as of early August] (screenshots.png)
+![Screenshots of progress as of early August](screenshots.jpg)
 
 # CheckUp! Android App
 ## By Ashley Maceli - Epicodus 2016
