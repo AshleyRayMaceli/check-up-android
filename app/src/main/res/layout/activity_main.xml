@@ -105,5 +105,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header_navigation_drawer"
         app:itemBackground="@drawable/pressed_color"
+        android:id="@+id/navigationView"
         />
 </android.support.v4.widget.DrawerLayout>
