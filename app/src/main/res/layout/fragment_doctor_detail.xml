@@ -77,7 +77,6 @@
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
                     android:gravity="center_vertical"/>
 
                 <TextView

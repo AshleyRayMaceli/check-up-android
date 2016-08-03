@@ -1,9 +1,11 @@
-# CheckUp Android App
+![Screenshots of progress as of early August](screenshots.png)
+
+# CheckUp! Android App
 ## By Ashley Maceli - Epicodus 2016
 
 ## Description
 
-Check Up is a new kind of health tracking app. Still in development as an ongoing independent project for the Android course at Epicodus. Keep track of your important health questions and concerns. Add those to your scheduled appointments and refer to it during your appointment. It is so easy to forget a question you wanted to ask your Doctor and it's too often that you only remember after the appointment! Check Up wants to help keep these records organized and available for you to make the most of your appointments! Check Up is meant to be used as a way to track these ailments, appointments, doctor's notes and smart reminders through your life to make you the healthiest and happiest you can be!
+CheckUp is a new kind of health tracking app. Still in development as an ongoing independent project for the Android course at Epicodus. Keep track of your important health questions and concerns. Add those to your scheduled appointments and refer to it during your appointment. It is so easy to forget a question you wanted to ask your Doctor and it's too often that you only remember after the appointment! Check Up wants to help keep these records organized and available for you to make the most of your appointments! CheckUp is meant to be used as a way to track these ailments, appointments, doctor's notes and smart reminders through your life to make you the healthiest and happiest you can be!
 
 ## Current Features
 * Create new accounts, log in and out.
