@@ -12,70 +12,60 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:background="@drawable/yoga">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="CheckUp!"
             android:id="@+id/mainTitleTextView"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryText"
-            android:drawableRight="@drawable/ic_done_black_24dp"
             android:textSize="50dp"
-            android:contextClickable="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp" />
+            android:textAlignment="center"
+            android:layout_marginTop="10dp" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="200dp">
+            android:layout_marginTop="250dp"
+            android:layout_marginLeft="200dp">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="190dp"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:text="Track Health"
-                    android:id="@+id/healthButton"
-                    android:layout_marginBottom="43dp"
-                    android:textSize="20dp"
-                    android:background="@drawable/round_button"
-                    android:layout_above="@+id/appointmentsButton"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/colorTextIcons"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:layout_gravity="bottom"
-                    android:layout_marginRight="5dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:text="Appointments"
-                    android:id="@+id/appointmentsButton"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="33dp"
-                    android:textSize="20dp"
-                    android:background="@drawable/round_button"
-                    android:textColor="@color/colorTextIcons"
-                    android:backgroundTint="@color/colorAccent"
-                    android:layout_marginLeft="5dp" />
-            </LinearLayout>
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="100dp"
+                android:text="Track Health"
+                android:id="@+id/healthButton"
+                android:textSize="20dp"
+                android:background="@drawable/round_button"
+                android:layout_above="@+id/appointmentsButton"
+                android:textColor="@color/colorTextIcons"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="5dp" />
         </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="40dp">
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:text="Appointments"
+            android:id="@+id/appointmentsButton"
+            android:layout_marginBottom="33dp"
+            android:textSize="20dp"
+            android:background="@drawable/round_button"
+            android:textColor="@color/colorTextIcons"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginLeft="5dp" />
+    </LinearLayout>
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

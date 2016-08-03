@@ -8,7 +8,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
 
         <TextView
@@ -18,23 +19,30 @@
             android:text="Ailment Title"
             android:id="@+id/ailmentTitleTextView"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp" />
+            android:layout_marginTop="30dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/material_grey_850" />
 
         <SeekBar
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:id="@+id/seekBar"
-            android:layout_marginTop="50dp" />
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="50dp" />
 
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Ailment Notes"
             android:id="@+id/ailmentNotesTextView"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="50dp"
             android:textAlignment="center"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:layout_weight="0.43"
+            android:textColor="@color/material_grey_850" />
     </LinearLayout>
 </RelativeLayout>
