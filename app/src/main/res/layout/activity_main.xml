@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,7 +40,8 @@
             android:backgroundTint="@color/colorAccent"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/mainTitleTextView"
-            android:layout_alignEnd="@+id/mainTitleTextView" />
+            android:layout_alignEnd="@+id/mainTitleTextView"
+            android:padding="10dp" />
 
         <LinearLayout
             android:orientation="horizontal"
