@@ -28,7 +28,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
     @Bind(R.id.appointmentsButton) Button mAppointmentsButton;
     @Bind(R.id.healthButton) Button mHealthButton;
-    @Bind(R.id.aboutButton) Button mAboutButton;
     @Bind(R.id.mainTitleTextView) TextView mMainTitleTextView;
 
     private FirebaseAuth mAuth;
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -56,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mAppointmentsButton.setOnClickListener(this);
         mHealthButton.setOnClickListener(this);
-        mAboutButton.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -80,10 +77,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(v == mHealthButton) {
             Intent intent = new Intent(MainActivity.this, HealthActivity.class);
-            startActivity(intent);
-        }
-        if(v == mAboutButton) {
-            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
         }
     }
@@ -148,6 +141,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.nav_doctor:
                 Intent findDoctorIntent = new Intent(MainActivity.this, FindDoctorActivity.class);
                 startActivity(findDoctorIntent);
+                break;
+
+            case R.id.nav_about:
+                Intent aboutIntent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(aboutIntent);
                 break;
 
             case R.id.nav_share:

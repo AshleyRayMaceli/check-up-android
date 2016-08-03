@@ -4,16 +4,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_appointments"
-            android:icon="@drawable/ic_favorite_border_black_24dp"
+            android:icon="@drawable/ic_today_black_24dp"
             android:title="Appointments" />
         <item
             android:id="@+id/nav_health"
-            android:icon="@drawable/ic_done_black_24dp"
+            android:icon="@drawable/ic_favorite_border_black_24dp"
             android:title="Current Ailments" />
         <item
             android:id="@+id/nav_doctor"
-            android:icon="@drawable/ic_favorite_border_black_24dp"
+            android:icon="@drawable/ic_add_shopping_cart_black_24dp"
             android:title="Find a Doctor" />
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_done_black_24dp"
+            android:title="About CheckUp!" />
     </group>
 
     <item android:title="Communicate">
