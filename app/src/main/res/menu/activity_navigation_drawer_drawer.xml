@@ -3,13 +3,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_appointments"
-            android:icon="@drawable/ic_today_black_24dp"
-            android:title="Appointments" />
-        <item
             android:id="@+id/nav_health"
             android:icon="@drawable/ic_favorite_border_black_24dp"
             android:title="Current Ailments" />
+
+        <item
+            android:id="@+id/nav_appointments"
+            android:icon="@drawable/ic_today_black_24dp"
+            android:title="Appointments" />
+
+        <item
+            android:id="@+id/nav_saved_doctors"
+            android:icon="@drawable/ic_local_hospital_black_24dp"
+            android:title="My Doctors" />
+
         <item
             android:id="@+id/nav_doctor"
             android:icon="@drawable/ic_add_shopping_cart_black_24dp"

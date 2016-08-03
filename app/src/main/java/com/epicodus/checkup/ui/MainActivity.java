@@ -143,6 +143,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(findDoctorIntent);
                 break;
 
+            case R.id.nav_saved_doctors:
+                Intent savedDoctorsIntent = new Intent(MainActivity.this, SavedDoctorListActivity.class);
+                startActivity(savedDoctorsIntent);
+                break;
+
             case R.id.nav_about:
                 Intent aboutIntent = new Intent(MainActivity.this, AboutActivity.class);
                 startActivity(aboutIntent);
