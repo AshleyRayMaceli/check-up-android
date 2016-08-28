@@ -22,14 +22,15 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
-    private String mSpecialtyPreference;
+//    private String mSpecialtyPreference;
     private String mCityPreference;
-    private int mSelectedPosition;
+    private int mStateSelectedPosition;
+    private int mSpecialistSelectedPosition;
 
     @Bind(R.id.specialtySearchButton) Button mSpecialtySearchButton;
-    @Bind(R.id.specialtyEditText) EditText mSpecialtyEditText;
     @Bind(R.id.cityEditText) TextView mCityEditText;
     @Bind(R.id.stateSpinner) Spinner mStateSpinner;
+    @Bind(R.id.specialistSpinner) Spinner mSpecialistSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,26 +42,26 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
 
-        mSpecialtyPreference = mSharedPreferences.getString(Constants.PREFERENCES_SPECIALTY_KEY, null);
         mCityPreference = mSharedPreferences.getString(Constants.PREFERENCES_CITY_KEY, null);
 
-        if (mSpecialtyPreference != null) {
-            mSpecialtyEditText.setText(mSpecialtyPreference);
+        if (mCityPreference != null) {
             mCityEditText.setText(mCityPreference);
             mStateSpinner.setSelection(mSharedPreferences.getInt(Constants.PREFERENCES_STATE_KEY, 0));
+            mSpecialistSpinner.setSelection(mSharedPreferences.getInt(Constants.PREFERENCES_SPECIALTY_KEY, 0));
         }
     }
 
     @Override
     public void onClick(View v) {
         if(v == mSpecialtySearchButton) {
-            String specialty = mSpecialtyEditText.getText().toString().toLowerCase();
+            String specialty = mSpecialistSpinner.getSelectedItem().toString().toLowerCase();
             String city = mCityEditText.getText().toString().toLowerCase();
             String state = mStateSpinner.getSelectedItem().toString().toLowerCase();
-            mSelectedPosition = mStateSpinner.getSelectedItemPosition();
+            mStateSelectedPosition = mStateSpinner.getSelectedItemPosition();
+            mSpecialistSelectedPosition = mSpecialistSpinner.getSelectedItemPosition();
 
-            if( (!(specialty).equals("")) && (!(city).equals(""))) {
-                addToSharedPreferences(specialty, city, mSelectedPosition);
+            if (!(city).equals("")) {
+                addToSharedPreferences(mSpecialistSelectedPosition, city, mStateSelectedPosition);
             }
 
             Intent intent = new Intent(FindDoctorActivity.this, DoctorListActivity.class);
@@ -72,8 +73,8 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    private void addToSharedPreferences(String specialty, String city, int state) {
-        mEditor.putString(Constants.PREFERENCES_SPECIALTY_KEY, specialty).apply();
+    private void addToSharedPreferences(int specialty, String city, int state) {
+        mEditor.putInt(Constants.PREFERENCES_SPECIALTY_KEY, specialty);
         mEditor.putString(Constants.PREFERENCES_CITY_KEY, city).apply();
         mEditor.putInt(Constants.PREFERENCES_STATE_KEY, state);
         mEditor.commit();

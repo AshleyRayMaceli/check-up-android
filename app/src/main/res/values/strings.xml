@@ -56,6 +56,28 @@
         <item>WI</item>
         <item>WY</item>
     </string-array>
+
+    <string-array name="specialists">
+        <item>Acupuncturist</item>
+        <item>Allergist</item>
+        <item>Cardiologist</item>
+        <item>Dentist</item>
+        <item>Dermatologist</item>
+        <item>Dietitian</item>
+        <item>Ear-Nose-Throat-Doctor</item>
+        <item>Gastroenterologist</item>
+        <item>General-Practitioner</item>
+        <item>Gynecologist</item>
+        <item>Hepatologist</item>
+        <item>Neurologist</item>
+        <item>Nutritionist</item>
+        <item>Optometrist</item>
+        <item>Podiatrist</item>
+        <item>Pulmonologist</item>
+        <item>Psychiatrist</item>
+        <item>Urologist</item>
+    </string-array>
+
     <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
