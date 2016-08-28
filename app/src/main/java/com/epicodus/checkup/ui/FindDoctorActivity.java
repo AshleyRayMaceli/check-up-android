@@ -22,7 +22,6 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
-//    private String mSpecialtyPreference;
     private String mCityPreference;
     private int mStateSelectedPosition;
     private int mSpecialistSelectedPosition;
@@ -54,7 +53,7 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         if(v == mSpecialtySearchButton) {
-            String specialty = mSpecialistSpinner.getSelectedItem().toString().toLowerCase();
+            String specialty = mSpecialistSpinner.getSelectedItem().toString().toLowerCase().replace(" ", "-");
             String city = mCityEditText.getText().toString().toLowerCase();
             String state = mStateSpinner.getSelectedItem().toString().toLowerCase();
             mStateSelectedPosition = mStateSpinner.getSelectedItemPosition();
