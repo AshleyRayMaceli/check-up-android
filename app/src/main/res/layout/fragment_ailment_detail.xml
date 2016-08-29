@@ -24,6 +24,14 @@
             android:textStyle="bold"
             android:textColor="@color/material_grey_850" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Date Here"
+            android:id="@+id/dateTextView"
+            android:layout_gravity="center_horizontal" />
+
         <SeekBar
             android:layout_width="300dp"
             android:layout_height="wrap_content"

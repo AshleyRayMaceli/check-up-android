@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 public class AilmentDetailFragment extends Fragment {
     @Bind(R.id.ailmentTitleTextView) TextView mAilmentTitleTextView;
     @Bind(R.id.ailmentNotesTextView) TextView mAilmentNotesTextView;
+    @Bind(R.id.dateTextView) TextView mDateTextView;
 
     private Ailment mAilment;
 
@@ -44,6 +45,7 @@ public class AilmentDetailFragment extends Fragment {
 
         mAilmentTitleTextView.setText(mAilment.getTitle());
         mAilmentNotesTextView.setText(mAilment.getNotes());
+        mDateTextView.setText(mAilment.getDate());
 
         return view;
     }
