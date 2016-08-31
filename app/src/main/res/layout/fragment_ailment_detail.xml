@@ -20,8 +20,20 @@
             android:id="@+id/ailmentTitleTextView"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
-            android:textSize="30sp"
+            android:textSize="40sp"
             android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="First Noticed:"
+            android:id="@+id/firstNoticedTextView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:textSize="25sp"
             android:textColor="@color/material_grey_850" />
 
         <TextView
@@ -30,14 +42,10 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Date Here"
             android:id="@+id/dateTextView"
-            android:layout_gravity="center_horizontal" />
-
-        <SeekBar
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/seekBar"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="50dp" />
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/material_grey_850" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -49,7 +57,7 @@
             android:layout_marginTop="50dp"
             android:textAlignment="center"
             android:padding="10dp"
-            android:textSize="30sp"
+            android:textSize="34sp"
             android:layout_weight="0.43"
             android:textColor="@color/material_grey_850" />
     </LinearLayout>
