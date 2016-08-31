@@ -2,6 +2,8 @@ package com.epicodus.checkup.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,11 +27,15 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     private String mCityPreference;
     private int mStateSelectedPosition;
     private int mSpecialistSelectedPosition;
+    private String mBetterDoctorURL = "http://www.betterdoctor.com";
 
     @Bind(R.id.specialtySearchButton) Button mSpecialtySearchButton;
     @Bind(R.id.cityEditText) TextView mCityEditText;
     @Bind(R.id.stateSpinner) Spinner mStateSpinner;
     @Bind(R.id.specialistSpinner) Spinner mSpecialistSpinner;
+    @Bind(R.id.betterDoctorCreditTextView) TextView mBetterDoctorCreditTextView;
+    @Bind(R.id.findDoctorTitle) TextView mFindDoctorTitle;
+    @Bind(R.id.chooseSpecialistTextView) TextView mChooseSpecialistTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,11 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_find_doctor);
         ButterKnife.bind(this);
         mSpecialtySearchButton.setOnClickListener(this);
+        mBetterDoctorCreditTextView.setOnClickListener(this);
+
+        Typeface questrialFont = Typeface.createFromAsset(getAssets(), "fonts/Questrial-Regular.otf");
+        mFindDoctorTitle.setTypeface(questrialFont);
+        mChooseSpecialistTextView.setTypeface(questrialFont);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
@@ -69,6 +80,11 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
             intent.putExtra("state", state);
 
             startActivity(intent);
+        }
+
+        if(v == mBetterDoctorCreditTextView) {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mBetterDoctorURL ));
+            startActivity(webIntent);
         }
     }
 

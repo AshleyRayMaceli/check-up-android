@@ -25,14 +25,14 @@
         android:layout_height="wrap_content"
         android:text="Search for Doctors"
         android:id="@+id/specialtySearchButton"
-        android:background="@color/colorAccent"
+        android:background="@drawable/round_button"
         android:textStyle="bold"
         android:textColor="@color/colorTextIcons"
         android:textSize="20dp"
-        android:layout_marginBottom="101dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:backgroundTint="@color/colorAccent"
+        android:layout_below="@+id/specialistSpinner"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="72dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,12 +40,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Powered By BetterDoctor"
         android:id="@+id/betterDoctorCreditTextView"
-        android:layout_marginBottom="57dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@color/material_grey_850" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cityEditText"
         android:layout_alignParentStart="true"
@@ -60,21 +61,48 @@
 
     <Spinner
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50sp"
+        android:textAlignment="center"
         android:entries="@array/states"
         android:prompt="@string/state_prompt"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
         android:id="@+id/stateSpinner"
         android:layout_alignTop="@+id/cityEditText"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/cityEditText"
-        android:layout_alignBottom="@+id/cityEditText" />
+        android:layout_alignBottom="@+id/cityEditText"
+        android:backgroundTint="@color/colorAccent" />
 
     <Spinner
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="70sp"
+        android:textAlignment="center"
         android:entries="@array/specialists"
+        android:textSize="30sp"
         android:id="@+id/specialistSpinner"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colorAccent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/betterDoctorCreditTextView"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_round_medium"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Choose a Specialist"
+        android:id="@+id/chooseSpecialistTextView"
+        android:layout_above="@+id/specialistSpinner"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:textColor="@color/material_grey_850" />
 
 </RelativeLayout>
