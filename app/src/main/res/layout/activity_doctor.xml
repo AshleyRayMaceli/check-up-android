@@ -13,4 +13,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recyclerView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="No Search Results Found. Go back and try a different search!"
+        android:id="@+id/noResultsTextView"
+        android:textAlignment="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="40dp"
+        android:textColor="@color/material_grey_850"
+        android:layout_marginBottom="76dp"
+        android:layout_alignBottom="@+id/recyclerView"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/plussign"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:visibility="invisible"
+        android:id="@+id/noResultsImageView" />
 </RelativeLayout>

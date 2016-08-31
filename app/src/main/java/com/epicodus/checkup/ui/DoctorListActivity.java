@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.epicodus.checkup.Constants;
 import com.epicodus.checkup.R;
@@ -26,6 +29,9 @@ import okhttp3.Response;
 
 public class DoctorListActivity extends AppCompatActivity {
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    @Bind(R.id.noResultsImageView) ImageView mNoResultsImageView;
+    @Bind(R.id.noResultsTextView) TextView mNoResultsTextView;
+
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
     private DoctorListAdapter mAdapter;
 
@@ -65,6 +71,11 @@ public class DoctorListActivity extends AppCompatActivity {
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DoctorListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
+
+                        if (mDoctors.isEmpty()) {
+                            mNoResultsImageView.setVisibility(View.VISIBLE);
+                            mNoResultsTextView.setVisibility(View.VISIBLE);
+                        }
                     }
                 });
             }
