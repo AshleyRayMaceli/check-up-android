@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class HealthActivity extends AppCompatActivity implements View.OnClickListener {
+public class HealthActivity extends BaseActivity implements View.OnClickListener {
     @Bind(R.id.ailmentTitleEditText) EditText mAilmentTitleEditText;
     @Bind(R.id.ailmentNotesEditText) EditText mAilmentNotesEditText;
     @Bind(R.id.addAilmentButton) Button mAddAilmentButton;
@@ -36,6 +36,7 @@ public class HealthActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health);
+        super.onCreateDrawer();
         ButterKnife.bind(this);
 
         Typeface questrialFont = Typeface.createFromAsset(getAssets(), "fonts/Questrial-Regular.otf");
