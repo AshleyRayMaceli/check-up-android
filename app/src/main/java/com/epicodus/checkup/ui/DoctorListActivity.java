@@ -27,7 +27,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class DoctorListActivity extends AppCompatActivity {
+public class DoctorListActivity extends BaseActivity {
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     @Bind(R.id.noResultsImageView) ImageView mNoResultsImageView;
     @Bind(R.id.noResultsTextView) TextView mNoResultsTextView;
@@ -39,6 +39,7 @@ public class DoctorListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor);
+        super.onCreateDrawer();
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
