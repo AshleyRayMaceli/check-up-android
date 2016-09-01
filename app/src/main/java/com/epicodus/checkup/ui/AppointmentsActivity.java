@@ -1,8 +1,10 @@
 package com.epicodus.checkup.ui;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,7 +15,7 @@ import com.epicodus.checkup.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class AppointmentsActivity extends AppCompatActivity implements View.OnClickListener {
+public class AppointmentsActivity extends BaseActivity implements View.OnClickListener {
     @Bind(R.id.appointmentsListView) ListView mAppointmentsListView;
     @Bind(R.id.newAppointmentButton) Button mNewAppointmentButton;
     @Bind(R.id.findDoctorButton) Button mFindDoctorButton;
@@ -25,6 +27,8 @@ public class AppointmentsActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointments);
+        super.onCreateDrawer();
+
         ButterKnife.bind(this);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, appointments);
         mAppointmentsListView.setAdapter(adapter);

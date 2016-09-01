@@ -83,7 +83,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_appointments) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_health) {
 
         } else if (id == R.id.nav_doctor) {
