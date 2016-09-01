@@ -20,7 +20,7 @@ import com.epicodus.checkup.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class FindDoctorActivity extends AppCompatActivity implements View.OnClickListener {
+public class FindDoctorActivity extends BaseActivity implements View.OnClickListener {
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -41,6 +41,7 @@ public class FindDoctorActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_doctor);
+        super.onCreateDrawer();
         ButterKnife.bind(this);
         mSpecialtySearchButton.setOnClickListener(this);
         mBetterDoctorCreditTextView.setOnClickListener(this);
