@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class AilmentsListActivity extends AppCompatActivity {
+public class AilmentsListActivity extends BaseActivity {
     private DatabaseReference mAilmentReference;
     private ArrayList<Ailment> mAilments = new ArrayList<>();
     private AllAilmentsListAdapter mAdapter;
@@ -35,6 +35,7 @@ public class AilmentsListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ailments_list);
+        super.onCreateDrawer();
         ButterKnife.bind(this);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
