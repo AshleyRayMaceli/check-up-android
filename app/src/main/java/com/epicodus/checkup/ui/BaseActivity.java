@@ -51,6 +51,11 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()) {
 
+            case R.id.nav_home:
+                Intent homeIntent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(homeIntent);
+                break;
+
             case R.id.nav_appointments:
                 Intent appointmentIntent = new Intent(getApplicationContext(), AppointmentsActivity.class);
                 startActivity(appointmentIntent);

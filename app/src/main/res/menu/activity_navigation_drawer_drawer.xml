@@ -3,6 +3,11 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Homepage" />
+
+        <item
             android:id="@+id/nav_health"
             android:icon="@drawable/ic_favorite_border_black_24dp"
             android:title="Current Ailments" />
