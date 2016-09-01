@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
     @Bind(R.id.appointmentsButton) Button mAppointmentsButton;
     @Bind(R.id.healthButton) Button mHealthButton;
     @Bind(R.id.mainTitleTextView) TextView mMainTitleTextView;
@@ -34,21 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
-    ActionBarDrawerToggle toggle;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        super.onCreateDrawer();
         ButterKnife.bind(this);
-
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
-        navigationView.setNavigationItemSelectedListener(this);
 
         Typeface questrialFont = Typeface.createFromAsset(getAssets(), "fonts/Questrial-Regular.otf");
         mMainTitleTextView.setTypeface(questrialFont);
@@ -96,9 +87,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             logout();
             return true;
         }
-        if (toggle.onOptionsItemSelected(item)) {
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -122,51 +110,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-
-            case R.id.nav_appointments:
-                Intent appointmentIntent = new Intent(MainActivity.this, AppointmentsActivity.class);
-                startActivity(appointmentIntent);
-                break;
-
-            case R.id.nav_health:
-                Intent healthIntent = new Intent(MainActivity.this, AilmentsListActivity.class);
-                startActivity(healthIntent);
-                break;
-
-            case R.id.nav_doctor:
-                Intent findDoctorIntent = new Intent(MainActivity.this, FindDoctorActivity.class);
-                startActivity(findDoctorIntent);
-                break;
-
-            case R.id.nav_saved_doctors:
-                Intent savedDoctorsIntent = new Intent(MainActivity.this, SavedDoctorListActivity.class);
-                startActivity(savedDoctorsIntent);
-                break;
-
-            case R.id.nav_about:
-                Intent aboutIntent = new Intent(MainActivity.this, AboutActivity.class);
-                startActivity(aboutIntent);
-                break;
-
-            case R.id.nav_share:
-                //feature to be added later
-                break;
-
-            case R.id.nav_send:
-                //feature to be added later
-                break;
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);
-        if(drawer.isDrawerOpen(GravityCompat.START))
-            drawer.closeDrawer(GravityCompat.START);
-
-        return false;
     }
 }
