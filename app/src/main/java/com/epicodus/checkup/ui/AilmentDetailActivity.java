@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class AilmentDetailActivity extends AppCompatActivity {
+public class AilmentDetailActivity extends BaseActivity {
     @Bind(R.id.viewPager) ViewPager mViewPager;
     private AilmentPagerAdapter adapterViewPager;
     ArrayList<Ailment> mAilments = new ArrayList<>();
@@ -25,6 +25,7 @@ public class AilmentDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ailment_detail);
+        super.onCreateDrawer();
         ButterKnife.bind(this);
 
         mAilments = Parcels.unwrap(getIntent().getParcelableExtra("ailments"));
