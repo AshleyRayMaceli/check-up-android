@@ -19,6 +19,32 @@
         android:id="@+id/recyclerView"
         android:background="@color/colorAccent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="No ailments added yet. Start tracking your wellness today!"
+        android:id="@+id/noResultsTextView"
+        android:textAlignment="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="40dp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="76dp"
+        android:layout_alignBottom="@+id/recyclerView"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/plussign"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:visibility="invisible"
+        android:id="@+id/noResultsImageView" />
+
 </RelativeLayout>
 
     <android.support.design.widget.NavigationView
