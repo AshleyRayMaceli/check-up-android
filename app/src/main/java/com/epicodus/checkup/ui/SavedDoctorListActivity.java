@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SavedDoctorListActivity extends AppCompatActivity {
+public class SavedDoctorListActivity extends BaseActivity {
     private DatabaseReference mDoctorReference;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
 
@@ -28,6 +28,7 @@ public class SavedDoctorListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor);
+        super.onCreateDrawer();
         ButterKnife.bind(this);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

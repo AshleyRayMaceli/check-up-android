@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class DoctorDetailActivity extends AppCompatActivity {
+public class DoctorDetailActivity extends BaseActivity {
     @Bind(R.id.viewPager)
     ViewPager mViewPager;
     private DoctorPagerAdapter adapterViewPager;
@@ -25,6 +25,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_detail);
+        super.onCreateDrawer();
         ButterKnife.bind(this);
 
         mDoctors = Parcels.unwrap(getIntent().getParcelableExtra("doctors"));
